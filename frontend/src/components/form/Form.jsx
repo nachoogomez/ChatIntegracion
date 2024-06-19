@@ -2,6 +2,8 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import io from 'socket.io-client'
 
+
+
 const socket = io('/')
 
 const Form = () => {
@@ -35,9 +37,11 @@ const handleSubmit = (event) => {
 };
 
 return (
-  <div className="h-screen bg-zinc-800 text-white flex items-center justify-center">
-    <form onSubmit={handleSubmit} className="bg-zinc-900 p-10">
-      <h1 className="text-2xl font-bold my-2">Chat React</h1>
+  <div className="h-screen bg-[#202c33] text-white flex items-center justify-center">
+    <form onSubmit={handleSubmit} className="bg-[#253c49] p-10 h-5/6 w-1/3 rounded-2xl">
+      <h1 className="text-2xl font-bold my-2">
+        Ignacio Gomez Chat
+      </h1>
       <input
         name="message"
         type="text"
@@ -52,7 +56,7 @@ return (
         {messages.map((message, index) => (
           <li
             key={index}
-            className={`my-2 p-2 table text-sm rounded-md ${message.from === "Me" ? "bg-sky-700 ml-auto" : "bg-black"
+            className={`my-2 p-2 table text-sm rounded-md ${message.from === "Me" ? "bg-green-900 ml-auto" : "bg-green-700"
               }`}
           >
             <b>{message.from}</b>:{message.body}
